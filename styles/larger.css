@@ -1,0 +1,44 @@
+@media only screen and (min-width: 40rem) {
+  header,
+  main,
+  nav,
+  footer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /************************** NAVIGATION **************************/
+  #hamburger {
+    display: none;
+  }
+
+  nav {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  nav a {
+    border: none;
+    padding: 0.5rem 1.5rem;
+  
+  }
+
+/************************** HERO LAYOUT **************************/
+.hero h1 {
+  font-size: 3rem;
+}
+
+/************************** SCHEDULE LAYOUT **************************/
+.schedule {
+  font-size: 1rem;
+}
+.schedule img {
+  width: 150px;
+}
+
+
+} /* end media query */
