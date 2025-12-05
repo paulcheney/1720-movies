@@ -1,6 +1,6 @@
 /* -------------- COLOR SCHEME --------------- */
 :root {
-  --color-primary: #ff26b0;
+  --color-primary: #29ace9;
   --color-secondary: #ffce26;
   /* Add a grey scale Colors */
   --color-mygrey-0: lab(100% 0 0);
@@ -25,6 +25,7 @@
 body {
   background-color: var(--color-mygrey-90);
 }
+
 /************************** HEADER **************************/
 header {
   padding: 10px 0 10px 10px;
@@ -99,15 +100,110 @@ nav.show {
 }
 
 /************************** MAIN LAYOUT **************************/
-
 h1 {
   margin: 0;
   padding: 10px;
   width: 100%;
   font-size: 1.5rem;
   color: var(--color-primary);
-  font-weight: 200;
+  font-weight: 400;
 }
+
+/************************** MOVIE CARDS **************************/
+#showmovies {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+#showmovies section {
+  border: 2px solid var(--color-mygrey-80);
+  background-color: var(--color-mygrey-90);
+  border-radius: 10px;
+  box-shadow: 0 0 14px var(--color-primary);
+  text-align: center;
+  display: grid;
+  align-items: end;
+}
+
+section h2 {
+  color: var(--color-mygrey-10);
+  text-align: center;
+  font-weight: 300;
+  margin: 10px;
+}
+
+section img {
+  width: 100%;
+  height: auto;
+}
+section button {
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-mygrey-90);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px 40px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  color: var(--color-mygrey-90);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/************************** DIALOG DESIGN **************************/
+dialog {
+  width: 300px;
+  border: 2px solid var(--color-secondary);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px var(--color-primary);
+  border-radius: 10px;
+  font-weight: 100;
+  font-size: 1rem;
+  color:var(--color-mygrey-80);
+  padding: 0;
+  span{font-weight: 300; font-size: .8rem;}
+}
+
+.title {
+  background-color: var(--color-mygrey-90);
+  font-weight: 500;
+  color: var(--color-mygrey-10);
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+}
+.release, .director, .studio, .summary {
+  padding: 2px 10px;
+}
+#moreinfo button {
+  display: block;
+  margin: 10px auto;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 99px;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  background-color: var(--color-primary);
+  color: var(--color-mygrey-0);
+  font-weight: 600;
+  font-size: .8rem;
+
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /************************** SOCIAL MEDIA **************************/

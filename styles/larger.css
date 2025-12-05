@@ -27,18 +27,14 @@
   
   }
 
-/************************** HERO LAYOUT **************************/
-.hero h1 {
-  font-size: 3rem;
+/************************** DIALOG DESIGN **************************/
+dialog {
+  width: 500px;
+  font-size: 1.3rem;
+  span{ font-size: 1.1rem;}
 }
 
-/************************** SCHEDULE LAYOUT **************************/
-.schedule {
-  font-size: 1rem;
-}
-.schedule img {
-  width: 150px;
-}
+
 
 
 } /* end media query */
