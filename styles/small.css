@@ -149,6 +149,9 @@ section button {
   font-weight: 600;
   font-size: 1rem;
 }
+section button:hover {
+  background-color: var(--color-mygrey-0);
+}
 
 /************************** DIALOG DESIGN **************************/
 dialog {
