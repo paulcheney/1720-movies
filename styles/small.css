@@ -2,24 +2,31 @@
 :root {
   --color-primary: #29ace9;
   --color-secondary: #ffce26;
-  /* Add a grey scale Colors */
-  --color-mygrey-0: lab(100% 0 0);
-  --color-mygrey-5: lab(95% 0 0);
-  --color-mygrey-10: lab(90% 0 0);
-  --color-mygrey-20: lab(80% 0 0);
-  --color-mygrey-30: lab(70% 0 0);
-  --color-mygrey-40: lab(60% 0 0);
-  --color-mygrey-50: lab(50% 0 0);
-  --color-mygrey-60: lab(40% 0 0);
-  --color-mygrey-70: lab(30% 0 0);
-  --color-mygrey-80: lab(20% 0 0);
-  --color-mygrey-90: lab(10% 0 0);
-  --color-mygrey-100: lab(0% 0 0);
+ 
+   /* Add a grey scale Colors */
+  --color-mygrey-05: lab(98% 0 0);
+  --color-mygrey-10: lab(97% 0 0);
+  --color-mygrey-20: lab(91% 0 0);
+  --color-mygrey-30: lab(85% 0 0);
+  --color-mygrey-40: lab(66% 0 0);
+  --color-mygrey-50: lab(48% 0 0);
+  --color-mygrey-60: lab(34% 0 0);
+  --color-mygrey-70: lab(27% 0 0);
+  --color-mygrey-80: lab(15% 0 0);
+  --color-mygrey-90: lab(8% 0 0);
+  --color-mygrey-95: lab(3% 0 0);
 }
 
+/************************** BORDER BOX **************************/
 * {
-  font-family: "Inter", sans-serif;
   box-sizing: border-box;
+}
+
+/************************** BODY **************************/
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -110,14 +117,14 @@ h1 {
 }
 
 /************************** MOVIE CARDS **************************/
-#showmovies {
-  margin: 10px;
+.showmovies {
+  margin: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-#showmovies section {
+.showmovies section {
   border: 2px solid var(--color-mygrey-80);
   background-color: var(--color-mygrey-90);
   border-radius: 10px;
@@ -127,18 +134,18 @@ h1 {
   align-items: end;
 }
 
-section h2 {
+.showmovies h2 {
   color: var(--color-mygrey-10);
   text-align: center;
   font-weight: 300;
   margin: 10px;
 }
 
-section img {
+.showmovies img {
   width: 100%;
   height: auto;
 }
-section button {
+.showmovies button {
   background-color: var(--color-secondary);
   border: 1px solid var(--color-mygrey-90);
   border-radius: 10px;
@@ -149,22 +156,19 @@ section button {
   font-weight: 600;
   font-size: 1rem;
 }
-section button:hover {
-  background-color: var(--color-mygrey-0);
+.showmovies button:hover {
+  background-color: var(--color-primary);
 }
 
 /************************** DIALOG DESIGN **************************/
 dialog {
   width: 300px;
   border: 2px solid var(--color-secondary);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 10px var(--color-primary);
   border-radius: 10px;
-  font-weight: 100;
-  font-size: 1rem;
-  color:var(--color-mygrey-80);
   padding: 0;
-  span{font-weight: 300; font-size: .8rem;}
+  
 }
 
 .title {
@@ -175,20 +179,27 @@ dialog {
   padding: 10px;
   text-align: center;
 }
-.release, .director, .studio, .summary {
+p {
   padding: 2px 10px;
+  font-weight: 200;
 }
-#moreinfo button {
+p b {
+  font-weight: 400;
+  font-size: .75rem;
+  display: block;
+  color: var(--color-primary)
+}
+.moreinfo button {
   display: block;
   margin: 10px auto;
   padding: 14px 40px;
   border: none;
   border-radius: 99px;
   box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   color: var(--color-mygrey-0);
   font-weight: 600;
-  font-size: .8rem;
+  font-size: 1rem;
 
 }
 dialog::backdrop {

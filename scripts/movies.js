@@ -1,55 +1,40 @@
-// Importy the JSON formatted data
-import { allmovies } from "../data/movies.mjs";
-console.log(allmovies);
+// Import JSON formatted data
+import { allMovies } from "../data/movies.mjs";
+//console.log(allmovies);
 
 //Select items in HTML document
-const destination = document.querySelector("#showmovies");
-const dialogpopup = document.querySelector("#moreinfo")
-const popuptitle = document.querySelector(".title")
-const poprelease = document.querySelector(".release")
-const popupdirector = document.querySelector(".director")
-const popupstudio = document.querySelector(".studio")
-const popupsummary = document.querySelector(".summary")
-const closepopupbutton = document.querySelector('#moreinfo button');
+const showMovies = document.querySelector("#show-movies");
+const dialogPopup = document.querySelector("#more-info")
+const dialogInfo = document.querySelector("#more-info div")
+const dialogClose = document.querySelector("#more-info button")
 
-// HIDE THE DIALOG
-closepopupbutton.addEventListener('click', () => {
-  dialogpopup.close();
-});
 
 // DISPLAY ALL THE MOVIES
-allmovies.forEach((movie) => {
-  //Park Photo and Name
-  console.log(movie);
-
-  //Build Each Movie Card
-  const moviecard = document.createElement("section")
-  //build the movie title
-  const movietitle = document.createElement("h2")
-  movietitle.innerText = movie.title
-  // build the movie photo
-  const movieimage = document.createElement("img")
-  movieimage.src = `images/${movie.image_url}`
-  movieimage.alt = movie.title
-  movieimage.width = "250"
-  movieimage.height = "350"
-  //build the movie button
-  const moviebutton = document.createElement("button")
-  moviebutton.innerText = 'Movie Details'
-  moviebutton.addEventListener('click', () => showStuff(movie));
-
-  moviecard.appendChild(movietitle)
-  moviecard.appendChild(movieimage)
-  moviecard.appendChild(moviebutton)
-  destination.appendChild(moviecard);
+allMovies.forEach((movie) => {
+  const movieCard = document.createElement("section");
+  
+  movieCard.innerHTML = `
+    <h2>${movie.title}</h2>
+    <img src="images/${movie.image_url}" alt="${movie.title}" width="250" height="350">
+    <button>Movie Details</button>
+  `
+  movieCard.querySelector("button").addEventListener("click", () => showStuff(movie));
+  showMovies.appendChild(movieCard);
 });
 
 
-function showStuff(x) {
-  popuptitle.innerHTML = x.title
-  poprelease.innerHTML = `<span>DATE:</span> ${x.release_date}`
-  popupdirector.innerHTML = `<span>DIRECTOR:</span> ${x.director}`
-  popupstudio.innerHTML = `<span>STUDIO:</span> ${x.studio}`
-  popupsummary.innerHTML = `<span>SUMMARY:</span> ${x.summary}`
-  dialogpopup.showModal()
+function showStuff(m) {
+  dialogInfo.innerHTML = `
+  <div class="title">${m.title}</div>
+  <p><b>RELEASED: </b>${m.release_date}</p>
+  <p><b>DIRECTOR: </b>${m.director}</p>
+  <p><b>STUDIO: </b>${m.studio}</p>
+  <p><b>SUMMARY: </b>${m.summary}</p>
+  `
+  dialogPopup.showModal()
 }
+
+// HIDE THE DIALOG
+ dialogClose.addEventListener('click', () => {
+   dialogPopup.close();
+ })

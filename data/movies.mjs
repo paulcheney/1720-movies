@@ -1,4 +1,4 @@
-export const allmovies = [
+export const allMovies = [
   {
     "title": "The Third Man",
     "summary": "A writer arrives in postwar Vienna to meet a friend who is reported dead; his investigation uncovers corruption and a mysterious 'third man.'",
